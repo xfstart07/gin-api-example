@@ -11,7 +11,8 @@ func ApiVersion() gin.HandlerFunc {
 
 		accept := c.GetHeader("Accept")
 		fmt.Println("accept", accept)
-		if accept == "application/vnd.bjywkd.v1+json" {
+		// example.com 一般是公司的域名
+		if accept == "application/vnd.example.com.v1+json" {
 			c.Set("version", "v1")
 		} else {
 			c.Set("version", "v2")
